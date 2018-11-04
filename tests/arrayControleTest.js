@@ -1,5 +1,4 @@
 var assert = require('assert');
-var chai = require('chai');
 var arrayCtrl = require('../server/arrayControle');
 
 before(function(done){
@@ -34,17 +33,17 @@ describe('arrayControle', function(){
                 done();
             });
         });
+
+        // chaiが動いてないかも
         describe('arraySum', function(){
             it('戻り値が配列であること', function(done){
-                arrayCtrl.arrayPush(5, function(array){
-                    chai.assert.isArray(array, 'arrayCheck');
-                });
+                assert.equal('object', typeof arrayCtrl.arraySum(10));
                 done();
             });
-
-            // it('入力した数値分の要素を持った配列が返されること', function(done){
-                
-            // });
+            it('入力した数値分の要素を持った配列が返されること', function(done){
+                assert.equal(10, arrayCtrl.arraySum(10).length);
+                done();
+            });
         });
     }
 );

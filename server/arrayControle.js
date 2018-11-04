@@ -14,10 +14,11 @@ function arrayPush(num){
 
 // 引数numの回数分乱数を生成
 // num個の要素を持つ配列を生成する
-function arraySum(num, callback){
+function arraySum(num){
     var random = [];
     for(var i=0; i<num; i++){
         random.push(Math.round( Math.random()*100 ));
     }
-    callback(random);
+
+    return random;
 }
